@@ -1,0 +1,9 @@
+{
+	"name": "ParesshADF",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cef4dc80-f69f-47db-89d7-5c061e34057e",
+		"tenantId": "678c58b5-fb94-4023-a858-27003adae6e4"
+	}
+}
