@@ -11,6 +11,9 @@
 		"AzureBlobOutput4_connectionString": {
 			"value": ""
 		},
+		"AzureBlobOutput5_connectionString": {
+			"value": ""
+		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},

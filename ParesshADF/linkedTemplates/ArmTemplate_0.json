@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobOutput4'"
 		},
+		"AzureBlobOutput5_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobOutput5'"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
@@ -58,6 +62,19 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureBlobOutput4_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobOutput5')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobOutput5_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -318,6 +335,33 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobOutput4')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText5')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobOutput5",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "target"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobOutput5')]"
 			]
 		},
 		{
@@ -1029,7 +1073,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "DelimitedText4",
+								"referenceName": "DelimitedText5",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1044,7 +1088,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Json1')]",
-				"[concat(variables('factoryId'), '/datasets/DelimitedText4')]"
+				"[concat(variables('factoryId'), '/datasets/DelimitedText5')]"
 			]
 		}
 	]

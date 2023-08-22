@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobOutput4'"
 		},
+		"AzureBlobOutput5_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobOutput5'"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
@@ -63,6 +67,9 @@
 					},
 					"AzureBlobOutput4_connectionString": {
 						"value": "[parameters('AzureBlobOutput4_connectionString')]"
+					},
+					"AzureBlobOutput5_connectionString": {
+						"value": "[parameters('AzureBlobOutput5_connectionString')]"
 					},
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
