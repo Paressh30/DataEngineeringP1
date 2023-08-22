@@ -1,0 +1,134 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Global Superstore.json",
+				"container": "raw"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Orders": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Row ID": {
+								"type": "integer"
+							},
+							"Order ID": {
+								"type": "string"
+							},
+							"Order Date": {
+								"type": "string"
+							},
+							"Ship Date": {
+								"type": "string"
+							},
+							"Ship Mode": {
+								"type": "string"
+							},
+							"Customer ID": {
+								"type": "string"
+							},
+							"Customer Name": {
+								"type": "string"
+							},
+							"Segment": {
+								"type": "string"
+							},
+							"City": {
+								"type": "string"
+							},
+							"State": {
+								"type": "string"
+							},
+							"Country": {
+								"type": "string"
+							},
+							"Postal Code": {
+								"type": "integer"
+							},
+							"Market": {
+								"type": "string"
+							},
+							"Region": {
+								"type": "string"
+							},
+							"Product ID": {
+								"type": "string"
+							},
+							"Category": {
+								"type": "string"
+							},
+							"Sub-Category": {
+								"type": "string"
+							},
+							"Product Name": {
+								"type": "string"
+							},
+							"Sales": {
+								"type": "number"
+							},
+							"Quantity": {
+								"type": "integer"
+							},
+							"Discount": {
+								"type": "integer"
+							},
+							"Profit": {
+								"type": "number"
+							},
+							"Shipping Cost": {
+								"type": "number"
+							},
+							"Order Priority": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"Returns": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Returned": {
+								"type": "string"
+							},
+							"Order ID": {
+								"type": "string"
+							},
+							"Market": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"People": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Person": {
+								"type": "string"
+							},
+							"Region": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
