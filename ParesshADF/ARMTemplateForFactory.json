@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobOutput2'"
 		},
+		"AzureBlobOutput4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobOutput4'"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
@@ -18,6 +22,10 @@
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorage3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
 		},
 		"AzureBloboutput1_connectionString": {
 			"type": "secureString",
@@ -69,6 +77,272 @@
 							"enableStaging": false,
 							"translator": {
 								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 1
+										},
+										"sink": {
+											"name": "Column1",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 2
+										},
+										"sink": {
+											"name": "Column2",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 3
+										},
+										"sink": {
+											"name": "Column3",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 4
+										},
+										"sink": {
+											"name": "Column4",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 5
+										},
+										"sink": {
+											"name": "Column5",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 6
+										},
+										"sink": {
+											"name": "Column6",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 7
+										},
+										"sink": {
+											"name": "Column7",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 8
+										},
+										"sink": {
+											"name": "Column8",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 9
+										},
+										"sink": {
+											"name": "Column9",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 10
+										},
+										"sink": {
+											"name": "Column10",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 11
+										},
+										"sink": {
+											"name": "Column11",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 12
+										},
+										"sink": {
+											"name": "Column12",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 13
+										},
+										"sink": {
+											"name": "Column13",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 14
+										},
+										"sink": {
+											"name": "Column14",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 15
+										},
+										"sink": {
+											"name": "Column15",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 16
+										},
+										"sink": {
+											"name": "Column16",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 17
+										},
+										"sink": {
+											"name": "Column17",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 18
+										},
+										"sink": {
+											"name": "Column18",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 19
+										},
+										"sink": {
+											"name": "Column19",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 20
+										},
+										"sink": {
+											"name": "Column20",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 21
+										},
+										"sink": {
+											"name": "Column21",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 22
+										},
+										"sink": {
+											"name": "Column22",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 23
+										},
+										"sink": {
+											"name": "Column23",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"type": "String",
+											"ordinal": 24
+										},
+										"sink": {
+											"name": "Column24",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
 								"typeConversion": true,
 								"typeConversionSettings": {
 									"allowDataTruncation": true,
@@ -179,6 +453,76 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText2')]",
 				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline3')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "JsonSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "JsonReadSettings"
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "Json1",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DelimitedText4",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Json1')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText4')]"
 			]
 		},
 		{
@@ -361,6 +705,33 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobOutput4",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "target"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobOutput4')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Excel1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -460,6 +831,145 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Json1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage3",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Global Superstore.json",
+						"container": "raw"
+					}
+				},
+				"schema": {
+					"type": "object",
+					"properties": {
+						"Orders": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"Row ID": {
+										"type": "integer"
+									},
+									"Order ID": {
+										"type": "string"
+									},
+									"Order Date": {
+										"type": "string"
+									},
+									"Ship Date": {
+										"type": "string"
+									},
+									"Ship Mode": {
+										"type": "string"
+									},
+									"Customer ID": {
+										"type": "string"
+									},
+									"Customer Name": {
+										"type": "string"
+									},
+									"Segment": {
+										"type": "string"
+									},
+									"City": {
+										"type": "string"
+									},
+									"State": {
+										"type": "string"
+									},
+									"Country": {
+										"type": "string"
+									},
+									"Postal Code": {
+										"type": "integer"
+									},
+									"Market": {
+										"type": "string"
+									},
+									"Region": {
+										"type": "string"
+									},
+									"Product ID": {
+										"type": "string"
+									},
+									"Category": {
+										"type": "string"
+									},
+									"Sub-Category": {
+										"type": "string"
+									},
+									"Product Name": {
+										"type": "string"
+									},
+									"Sales": {
+										"type": "number"
+									},
+									"Quantity": {
+										"type": "integer"
+									},
+									"Discount": {
+										"type": "integer"
+									},
+									"Profit": {
+										"type": "number"
+									},
+									"Shipping Cost": {
+										"type": "number"
+									},
+									"Order Priority": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"Returns": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"Returned": {
+										"type": "string"
+									},
+									"Order ID": {
+										"type": "string"
+									},
+									"Market": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"People": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"Person": {
+										"type": "string"
+									},
+									"Region": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage3')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureBlobOutput2')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -468,6 +978,19 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureBlobOutput2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobOutput4')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobOutput4_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -494,6 +1017,19 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureBlobStorage2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage3_connectionString')]"
 				}
 			},
 			"dependsOn": []
