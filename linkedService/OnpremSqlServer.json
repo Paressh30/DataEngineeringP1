@@ -1,0 +1,24 @@
+{
+	"name": "OnpremSqlServer",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "Integrated Security=True;Data Source=PARESSH-PC;Initial Catalog=PARESSHDB",
+			"userName": "PARESSH-PC\\pares",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault2",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "microsoftsqlPassword",
+				"secretVersion": "fb4b60c3b4d3482489cab5ab131c3617"
+			}
+		},
+		"connectVia": {
+			"referenceName": "SHIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
