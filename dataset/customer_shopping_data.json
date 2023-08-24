@@ -1,0 +1,57 @@
+{
+	"name": "customer_shopping_data",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OnpremSqlServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "invoice_no",
+				"type": "varchar"
+			},
+			{
+				"name": "customer_id",
+				"type": "varchar"
+			},
+			{
+				"name": "gender",
+				"type": "varchar"
+			},
+			{
+				"name": "age",
+				"type": "varchar"
+			},
+			{
+				"name": "category",
+				"type": "varchar"
+			},
+			{
+				"name": "quantity",
+				"type": "varchar"
+			},
+			{
+				"name": "price",
+				"type": "varchar"
+			},
+			{
+				"name": "payment_method",
+				"type": "varchar"
+			},
+			{
+				"name": "invoice_date",
+				"type": "varchar"
+			},
+			{
+				"name": "shopping_mall",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "customer_shopping_data"
+		}
+	}
+}
