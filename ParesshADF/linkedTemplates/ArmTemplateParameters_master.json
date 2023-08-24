@@ -26,6 +26,24 @@
 		"AzureBloboutput1_connectionString": {
 			"value": ""
 		},
+		"AzureDataLakeStorage9_accountKey": {
+			"value": ""
+		},
+		"OnpremSqlServer_connectionString": {
+			"value": "Integrated Security=True;Data Source=PARESSH-PC;Initial Catalog=PARESSHDB"
+		},
+		"AzureDataLakeStorage9_properties_typeProperties_url": {
+			"value": "https://paresshdatalake.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://keyvaultparessh.vault.azure.net/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://keyvaultparesshm.vault.azure.net/"
+		},
+		"OnpremSqlServer_properties_typeProperties_userName": {
+			"value": "PARESSH-PC\\pares"
+		},
 		"containerUri": {
 			"value": ""
 		},
