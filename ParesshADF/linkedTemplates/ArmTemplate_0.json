@@ -39,11 +39,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage9'"
 		},
-		"OnpremSqlServer_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'OnpremSqlServer'",
-			"defaultValue": "Integrated Security=True;Data Source=PARESSH-PC;Initial Catalog=PARESSHDB"
-		},
 		"AzureDataLakeStorage9_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://paresshdatalake.dfs.core.windows.net/"
@@ -55,10 +50,6 @@
 		"AzureKeyVault2_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://keyvaultparesshm.vault.azure.net/"
-		},
-		"OnpremSqlServer_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "PARESSH-PC\\pares"
 		}
 	},
 	"variables": {
@@ -444,6 +435,33 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage9",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "bronze"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage9')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Excel1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -703,36 +721,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage9')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/OnpremSqlServer')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('OnpremSqlServer_connectionString')]",
-					"userName": "[parameters('OnpremSqlServer_properties_typeProperties_userName')]",
-					"password": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "AzureKeyVault2",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "microsoftsqlPassword",
-						"secretVersion": "fb4b60c3b4d3482489cab5ab131c3617"
-					}
-				},
-				"connectVia": {
-					"referenceName": "SHIR",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/SHIR')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureKeyVault2')]"
 			]
 		}
 	]

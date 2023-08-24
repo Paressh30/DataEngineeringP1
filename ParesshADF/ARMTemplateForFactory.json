@@ -90,12 +90,14 @@
 								"partitionOption": "None"
 							},
 							"sink": {
-								"type": "ParquetSink",
+								"type": "DelimitedTextSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings"
 								},
 								"formatSettings": {
-									"type": "ParquetWriteSettings"
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
 								}
 							},
 							"enableStaging": false,
@@ -117,7 +119,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "customer_shopping_data_parquet",
+								"referenceName": "DelimitedText6",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -132,7 +134,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/customer_shopping_data')]",
-				"[concat(variables('factoryId'), '/datasets/customer_shopping_data_parquet')]"
+				"[concat(variables('factoryId'), '/datasets/DelimitedText6')]"
 			]
 		},
 		{
@@ -855,6 +857,33 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobOutput5')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText6')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage9",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "bronze"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage9')]"
 			]
 		},
 		{

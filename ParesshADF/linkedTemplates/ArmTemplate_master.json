@@ -111,9 +111,6 @@
 					"AzureDataLakeStorage9_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage9_accountKey')]"
 					},
-					"OnpremSqlServer_connectionString": {
-						"value": "[parameters('OnpremSqlServer_connectionString')]"
-					},
 					"AzureDataLakeStorage9_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage9_properties_typeProperties_url')]"
 					},
@@ -122,9 +119,6 @@
 					},
 					"AzureKeyVault2_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
-					},
-					"OnpremSqlServer_properties_typeProperties_userName": {
-						"value": "[parameters('OnpremSqlServer_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -143,6 +137,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"OnpremSqlServer_connectionString": {
+						"value": "[parameters('OnpremSqlServer_connectionString')]"
+					},
+					"OnpremSqlServer_properties_typeProperties_userName": {
+						"value": "[parameters('OnpremSqlServer_properties_typeProperties_userName')]"
 					}
 				}
 			},

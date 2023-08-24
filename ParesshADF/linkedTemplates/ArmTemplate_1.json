@@ -6,12 +6,48 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "ParesshADF"
+		},
+		"OnpremSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'OnpremSqlServer'",
+			"defaultValue": "Integrated Security=True;Data Source=PARESSH-PC;Initial Catalog=PARESSHDB"
+		},
+		"OnpremSqlServer_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "PARESSH-PC\\pares"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/OnpremSqlServer')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": "[parameters('OnpremSqlServer_connectionString')]",
+					"userName": "[parameters('OnpremSqlServer_properties_typeProperties_userName')]",
+					"password": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "AzureKeyVault2",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "microsoftsqlPassword",
+						"secretVersion": "fb4b60c3b4d3482489cab5ab131c3617"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -550,7 +586,9 @@
 					"table": "customer_shopping_data"
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OnpremSqlServer')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/copy_pipeline')]",
@@ -577,12 +615,14 @@
 								"partitionOption": "None"
 							},
 							"sink": {
-								"type": "ParquetSink",
+								"type": "DelimitedTextSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings"
 								},
 								"formatSettings": {
-									"type": "ParquetWriteSettings"
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
 								}
 							},
 							"enableStaging": false,
@@ -604,7 +644,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "customer_shopping_data_parquet",
+								"referenceName": "DelimitedText6",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
